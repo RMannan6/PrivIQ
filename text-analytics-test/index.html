@@ -1,39 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Azure Text Analytics Test</title>
-    <meta name="description" content="Azure Text Analytics Test">
-</head>
-
-<body>
-    <h1>Azure Text Analytics Test</h1>
-    <script>
-        const functionURL = 'https://text-analytics-odl-hack-229005.azurewebsites.net/api/AnalyzeTextService?code=sVTGssIWRl2aHbyFWRXIapWMK4DHOIsIiWRZK5W1ky5F/jaFDz7Jtg==';
-        const data = {
-            name: "Joe"
-        };
-
-        fetch(functionURL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'x-functions-key': "sVTGssIWRl2aHbyFWRXIapWMK4DHOIsIiWRZK5W1ky5F/jaFDz7Jtg==",
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "name": "Joe"
-            })
-        })
-            .then(res => res.json())
-            .then((data) => {
-                console.log(data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    </script>
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Azure Text Analytics REST API</title>
+  </head>
+  <body>
+    <h1>Azure Text Analytics REST API</h1>
+    <label for="testValue">Test Value:</label>
+    <textarea id="testValue" name="testValue" rows="4" cols="50">
+      Biden campaign manager Jen O’Malley Dillon is urging patience as the results continue to filter in, saying that while the story is going to be "very positive" for Biden, the counting is still happening and it’s going to take time. 
+      I think the story of today is going to be a very positive story for the vice president but also one where folks are going to need to stay patient and stay calm,” said Dillon. "The counting is happening, it's going to take time. We need to allow it to get done and done well, and we are very confident whatever happens with the counting and the timing we will come out ahead. We are absolutely confident that Joe Biden will be the next president of the United States.
+    </textarea>
+    <button type="button" id="analyzeButton">Analyze Text!</button>
+    <h2>Returned Key Phrases</h2>
+    <div id="returnedObject"></div>
+    <script src="script.js"></script>
+  </body>
 </html>
+
