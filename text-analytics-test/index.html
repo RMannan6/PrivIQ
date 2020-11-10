@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Azure Text Analytics Test</title>
+    <meta name="description" content="Azure Text Analytics Test">
+</head>
+
+<body>
+    <h1>Azure Text Analytics Test</h1>
+    <script>
+        const functionURL = 'https://text-analytics-odl-hack-229005.azurewebsites.net/api/AnalyzeTextService?code=sVTGssIWRl2aHbyFWRXIapWMK4DHOIsIiWRZK5W1ky5F/jaFDz7Jtg==';
+        const data = {
+            name: "Joe"
+        };
+
+        fetch(functionURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'x-functions-key': "sVTGssIWRl2aHbyFWRXIapWMK4DHOIsIiWRZK5W1ky5F/jaFDz7Jtg==",
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "name": "Joe"
+            })
+        })
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    </script>
+</body>
+
+</html>
