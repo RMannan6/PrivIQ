@@ -28,13 +28,16 @@ const postData = {
 /* update value of input to pass */
 input.addEventListener("input", updateValue);
 function updateValue(e) {
-  postData.documents[0].text = e.target.value;
+  // trim text to 5000 characters to pass to Azure
+  let inputString = e.target.value;
+  inputString.substring(1,5000);
+  
+  postData.documents[0].text = inputString;
 }
 
 analyzeButton.addEventListener("click", analyzeText);
 /* call Azure Function via HTTP POST and return a very simple object  */
 function analyzeText(e) {
-  console.log(postData);
   fetch(functionURL, {
     method: "POST",
     headers: {
@@ -69,7 +72,10 @@ function evaluateKeyPhrases(data) {
   });
   if (privacyTermMatches) {
     objectOutput.innerHTML +=
-      "<h1>Matched Privacy Terms " + privacyTermMatches + " times!!</h1>";
+      "<h1 class='match-response true'>Matched Privacy Terms " + privacyTermMatches + " times!!</h1>";
+  } else {
+    objectOutput.innerHTML +=
+      "<h1 class='match-response false'>No Matched Privacy Terms</h1>";
   }
 
   // output phrases for web app demo
