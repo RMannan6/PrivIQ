@@ -1,0 +1,22 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+h1.match-response {
+  padding: 1px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: white;
+}
+h1.match-response.true {
+  background-color: green;
+}
+h1.match-response.false {
+  background-color: red;
+}
