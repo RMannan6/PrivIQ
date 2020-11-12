@@ -16,7 +16,7 @@ const privacyTerms = [
 const input = document.getElementById("testValue");
 const analyzeButton = document.getElementById("analyzeButton");
 const objectOutput = document.getElementById("returnedObject");
-const testValue = input.value;
+let testValue = input.value;
 /* set value of input field as the body to be sent via the POST request */
 const postData = {
   documents: [
@@ -31,11 +31,10 @@ const postData = {
 /* update value of input to pass */
 input.addEventListener("input", updateValue);
 function updateValue(e) {
-  // trim text to 5000 characters to pass to Azure
   let inputString = e.target.value;
-  inputString.substring(1,5000);
-  
-  postData.documents[0].text = inputString;
+  // trim text to 5000 characters to pass to Azure
+  postData.documents[0].text = inputString.substring(1,5000);
+  console.log('length: ' + postData.documents[0].text.length);
 }
 
 analyzeButton.addEventListener("click", analyzeText);
@@ -52,6 +51,8 @@ function analyzeText(e) {
   })
     .then(res => res.json())
     .then(data => {
+      console.log(postData.documents[0].text);
+      console.log(data);
       evaluateKeyPhrases(data);
     })
     .catch(error => {
