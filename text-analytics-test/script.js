@@ -74,7 +74,7 @@ function evaluateKeyPhrases(data) {
       }
     });
   });
-  if (privacyTermMatches > 2) {
+  if (privacyTermMatches > 3) {
     objectOutput.innerHTML +=
       "<h1 class='match-response true'>This site collects your data</h1>";
   } else {
