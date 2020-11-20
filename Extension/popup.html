@@ -5,11 +5,27 @@
       button {
         height: 30px;
         width: 120px;
+        background-color: #001F5B;
         outline: none;
       }
-      h1, img, p {
+      h1, p {
+        padding-top: 0%;
         text-align: center
       }
+
+      img{
+        text-align: center;
+        width: auto;
+        height: 100;
+        display: block;
+        font-size: 0;
+      }
+
+      .font-family{
+        font-family: Exo;
+        src: url('/Extension/static/static/Exo-Black.ttf')
+      }
+
       .message {
         padding: 15px;
         border: 1px solid #d6e9c6;
@@ -21,19 +37,19 @@
         padding: 15px;
         border: 1px solid #d6e9c6;
         border-radius: 4px;
-        color: #0e0c0c;
+        color: #001F5B;
         background-color: #dcd4a2;
       }
     </style>
   </head>
   <body>
-    <h1>PrivIQ</h1>
-    
-    <img src="logo.png" alt="PrivIQ logo">
+    <body style="background-image:url('icons/Background.png');"></body>
 
-    <p>Your privacy is in your control</p>
+    <img src= "icons/PRIVIQ.svg" style="height: 200px; width: auto;">
+
+    <p class= "font-family" style = "color: #001F5B;font-weight: bold;">Your privacy is in your control</p>
     <div style="text-align:center;">
-      <button id="privacy">Analyze privacy</button>
+      <button id="privacy" class = "font-family" style="font-weight: bold; color: #ffffff;">Analyze privacy</button>
       <hr>
     </div>
     <div id="returnedObject"></div>
