@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        height: 30px;
+        width: 120px;
+        outline: none;
+      }
+      h1, img, p {
+        text-align: center
+      }
+      .message {
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #3c763d;
+        background-color: #dff0d8;
+      }
+      .warning {
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #0e0c0c;
+        background-color: #dcd4a2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PrivIQ</h1>
+    
+    <img src="logo.png" alt="PrivIQ logo">
+
+    <p>Your privacy is in your control</p>
+    <div style="text-align:center;">
+      <button id="privacy">Analyze privacy</button>
+      <hr>
+    </div>
+    <div id="returnedObject"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
